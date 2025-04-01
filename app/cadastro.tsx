@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { View, TextInput, Button, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import api from '../lib/api';
-import { global } from '../styles/global';
+import { globalStyles } from '../styles/global';
 
 export default function Cadastro() {
   const [nome, setNome] = useState('');
@@ -21,10 +21,10 @@ export default function Cadastro() {
   };
 
   return (
-    <View style={global.container}>
-      <TextInput placeholder="Nome" value={nome} onChangeText={setNome} style={global.input} />
-      <TextInput placeholder="Email" value={email} onChangeText={setEmail} style={global.input} />
-      <TextInput placeholder="Senha" value={senha} onChangeText={setSenha} secureTextEntry style={global.input} />
+    <View style={globalStyles.container}>
+      <TextInput placeholder="Nome" value={nome} onChangeText={setNome} style={globalStyles.input} />
+      <TextInput placeholder="Email" value={email} onChangeText={setEmail} style={globalStyles.input} />
+      <TextInput placeholder="Senha" value={senha} onChangeText={setSenha} secureTextEntry style={globalStyles.input} />
       <Button title="Cadastrar" onPress={cadastrar} />
     </View>
   );

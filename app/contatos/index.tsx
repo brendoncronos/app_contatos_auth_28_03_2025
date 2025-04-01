@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { View, Text, Button, FlatList, Image, TouchableOpacity, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import api from '../../lib/api';
-import { global } from '../../styles/global';
+import { globalStyles } from '../../styles/global';
 import { Contato } from '@/types/Contatos';
 import { useFocusEffect } from '@react-navigation/native';
 import { useCallback } from 'react';
@@ -36,7 +36,7 @@ export default function ListaContatos() {
   );
 
   return (
-    <View style={global.container}>
+    <View style={globalStyles.container}>
       <Button title="Novo contato" onPress={() => router.push('/contatos/novo')} />
       <FlatList
         data={contatos}

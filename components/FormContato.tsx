@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { View, TextInput, Button, Image } from 'react-native';
-import { global } from '../styles/global';
+import { globalStyles } from '../styles/global';
 import * as ImagePicker from 'expo-image-picker';
 import api from '../lib/api';
 
@@ -41,10 +41,10 @@ export default function FormContato({ valores, onSubmit }: Props) {
 
   return (
     <View>
-      <TextInput placeholder="Nome" value={nome} onChangeText={setNome} style={global.input} />
-      <TextInput placeholder="Email" value={email} onChangeText={setEmail} style={global.input} />
-      <TextInput placeholder="Telefone" value={telefone} onChangeText={setTelefone} style={global.input} />
-      <TextInput placeholder="Endereço" value={endereco} onChangeText={setEndereco} style={global.input} />
+      <TextInput placeholder="Nome" value={nome} onChangeText={setNome} style={globalStyles.input} />
+      <TextInput placeholder="Email" value={email} onChangeText={setEmail} style={globalStyles.input} />
+      <TextInput placeholder="Telefone" value={telefone} onChangeText={setTelefone} style={globalStyles.input} />
+      <TextInput placeholder="Endereço" value={endereco} onChangeText={setEndereco} style={globalStyles.input} />
       <Button title="Selecionar imagem" onPress={escolherImagem} />
       {foto && <Image source={{ uri: `https://aula-27-03-5sqc.onrender.com/uploads/${foto}` }} style={{ width: 100, height: 100 }} />}
       <Button title="Salvar" onPress={enviar} />
